@@ -1,0 +1,56 @@
+{% extends 'layouts/layout.html' %}
+
+{% load static %}
+{% block content %}
+
+<section>
+    <div class="container">
+        <div class="row mt-5 contenedor_presentacion">
+            <div class="col-lg-12 col-md-12 text-center presentacion_e text-light text-dark">
+                <h1>Desarrollador Backend</h1>
+                <p>Codifico cosas hermosas, y me encanta lo que hago.</p>
+                <img src="{% static 'images/Emoji.png' %}" class="img-fluid" alt="Avatar">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row text-center mt-5">
+            <div class="col">
+                <img src="{% static 'images/hero.svg' %}" class="img-fluid" width="800px" alt="">
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="container-fluid p-0 contenedor_saludo">
+
+       <div class="row">
+            <div class="col-lg-12 d-flex justify-content-center flex-align-center mt-5 text-light parrafo_saludo">
+                <h1>Hola<span>🖐️</span>, soy Sebastián</h1>
+            </div>
+       </div>
+
+       <div class="row text-center ">
+            <div class="col-lg-12 col-md-6 col-s-3 mt-2 text-light parrafo_saludo">
+                <P>Me considero una persona apasionada por la programación, especialmente en el área del servidor. Siempre estoy dispuesto a enfrentar nuevos desafíos y me encuentro en constante proceso de aprendizaje. Mi pasión por el desarrollo en el ámbito del servidor me motiva a explorar y expandir mis habilidades para ofrecer soluciones creativas y eficientes. </P>
+            </div>
+       </div>
+       
+    </div>
+    <div class="barra"></div> 
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Mis skills</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

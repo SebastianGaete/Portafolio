@@ -1,67 +1,118 @@
 :root{
     --titulos: 'Oswald', sans-serif;
     --cuerpos: 'Oswald', sans-serif;
+    --fondo: #222831;
+    --texto: #FFF9F5;
+    --secundario: #FD7014;
+    --secundario2: #f4863e;
 }
 
-.fuente{
-    font-family: var(--titulos)
+/*   GLOBALS   */
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+.bg-main{
+    font-family: var(--titulos);
+    background-color: var(--fondo);
+    color: var(--texto);
 }
 
-.menu_var{
-    background-color:  #6E07F3;
-    color: #2b292c;;
+
+/*   NAVBAR   */
+.menuvar-colapsado{
+    background-color:  var(--secundario);
+    color: var(--fondo)
 }
 
 .navbar{
-    font-size: 25px;
+    font-size: 20px;
 }
 
-.boton:hover{
-    background-color: #6E07F3;
-    border: solid 1px #6E07F3;
+.enlaces{
+    color: var(--texto)
 }
 
-.nav-item-1 a{
-    color: rgb(101, 100, 100);
+.enlaces:hover{
+    color: var(--texto);
 }
 
-.nav-item-1 a:hover{
-    color:#6E07F3
+.button{
+    color: var(--secundario);
+    border: solid 2px var(--secundario);
+    border-radius: 20px;
+    padding: 5px 30px;
 }
 
+.button:hover{
+    color: var(--secundario2);
+    border-color: var(--secundario2)
+}
+
+
+
+
+/*   HERO   */
 .contenedor_presentacion{
     line-height: 70px;
 }
-
-.presentacion_e h1{
-    font-size: 70px;
+.presentacion_texto h1{
+    font-size: 50px;
 }
-
-.presentacion_e p{
-    font-size: 25px;
+.presentacion_texto p{
+    padding-top: 18px;
+    font-size: 20px;
+    line-height: normal;
 }
-
-.presentacion_e img{
+.presentacion_foto{
     border-radius: 50%;
-    width: 230px;
-    border: solid 2px rgb(157, 152, 152);
+    width: 300px;
+    border: solid 2px var(--secundario);
 }
-.presentacion_e img:hover{
-    border: solid 2px #6E07F3;
+@media (min-width: 768px) {
+    .contenedor_foto{
+        text-align: end;
+    }
+    .presentacion_texto{
+        text-align: left;
+    }
 }
-
+@media (max-width: 428px) {
+    .contenedor_foto{
+        text-align: center;
+    }
+    .presentacion_texto{
+        text-align: center;
+    }
+}
 @media (max-width: 393px) {
-    .presentacion_e h1{
+    .presentacion_texto h1{
         font-size: 35px;
     }
-    .presentacion_e p{
+    .presentacion_texto p{
         font-size: 14px;
     }
-
-    .presentacion_e img{
-        width: 180px  
-    }
 }
+.skills{
+    color: var(--secundario2);
+}
+
+.icono_redes{
+    color: var(--texto);
+    font-size: 30px;
+    padding-right: 20px;
+}
+
+.icono_redes:hover{
+    color: var(--secundario);
+}
+
+.button_about{
+    color: var(--secundario);
+}
+
 
 
 .contenedor_saludo{
@@ -100,9 +151,4 @@
     }
 }
 
-.barra{
-    height: 100px;
-    background-color:  #6E07F3;
-    clip-path: polygon(100% 100%, 100% 0, 0 0);
-}
 

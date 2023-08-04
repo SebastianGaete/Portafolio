@@ -21,3 +21,12 @@ class Contacto(models.Model):
 
     def __str__(self):
         return self.nombre + " " + self.apellidos
+
+
+class Comentario(models.Model):
+    usuario = models.CharField(max_length=100, blank=True, default='Anónimo')
+    contenido = models.TextField()
+    fecha_comentario = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de comentario')
+
+    def __str__(self):
+        return self.usuario

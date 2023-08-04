@@ -14,7 +14,6 @@ def detail_project(request, id):
     return render(request, 'pages/detail_project.html', {'detalle':detalle})
 
 
-
 def contact(request):
     if request.method == 'POST':
         try:
@@ -23,7 +22,6 @@ def contact(request):
             email = request.POST['email']
             mensaje = request.POST['mensaje']
             campos = nombre, apellidos, email, mensaje
-            print(campos)
             for i in campos:
                 if i == '':
                     raise Exception
@@ -39,3 +37,8 @@ def contact(request):
 
     else:
         return render(request, 'pages/contact.html')
+    
+
+def comentario(request):
+    
+    return render(request, 'pages/contact.html')

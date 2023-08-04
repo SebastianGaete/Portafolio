@@ -197,12 +197,32 @@ li{
 }
 
 
-/*  CONTACT FORMULARIO  */
+/*  CONTACT & COMENT FORMULARIO */
 .card_formulario{
     background-color: var(--fondo2);
 }
 
 .campo_input{
-    max-width: 600px;
     margin-bottom: 10px;
 }
+@media (max-width: 834px ){
+    .carrusel{
+        visibility: collapse;
+    }
+}
+
+/* <div class="col col-lg-6">
+            <form method="POST" class="card card-body card_formulario text-center">
+                <h1>Comentarios</h1>
+                {% csrf_token %}
+
+                <label for="usuario"></label>
+                <input class="form-control campo_input opacity-50 shadow-none border-0" type="text" name="usuario" id="usuario" placeholder="nombre (opcional)">
+
+                <label for="contenido"></label>
+                <textarea class="form-control campo_input opacity-50 shadow-none border-0" name="contenido" id="contenido" rows="4" placeholder="Deja tu comentario*"></textarea>
+                
+                <button class="btn btn-secondary campo_input button_contact">Comentar</button>
+
+            </form>
+        </div> */

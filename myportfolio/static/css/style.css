@@ -42,7 +42,6 @@ li{
 
 .button{
     color: var(--secundario);
-    border: solid 2px var(--secundario);
     border-radius: 20px;
     padding: 5px 30px;
 }
@@ -51,8 +50,6 @@ li{
     color: var(--secundario2);
     border-color: var(--secundario2)
 }
-
-
 
 
 /*   HERO   */
@@ -115,7 +112,9 @@ li{
     color: var(--secundario);
 }
 
-/*   Proyectos   */
+
+
+/*   PROYECTOS   */
 .contenedor_proyectos{
     margin-top: 70px 
 }
@@ -138,7 +137,7 @@ li{
 .button_proyecto{
     background-color: var(--secundario);
     color: var(--texto);
-    width: 70px;
+    width: 90px;
 }
 
 .button_proyecto:hover{
@@ -146,6 +145,32 @@ li{
 }
 
 
+
+/*   FOOTER   */
+
+.barra_footer{
+    background-color: var(--texto);
+    height: 3px;
+}
+.contenedor_footer{
+    margin-top: 30px;
+}
+.redes_footer a i{
+    margin-right: 10px;
+    font-size: 20px;
+}
+.button_contact{
+    border: none;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #FD7014;
+}
+.button_contact a{
+    color: var(--texto);
+}
+.button_contact:hover{
+    background-color: var(--secundario2);
+}
 
 
 

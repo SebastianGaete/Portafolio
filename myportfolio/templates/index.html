@@ -44,7 +44,7 @@
     <div class="container contenedor_proyectos">
         <div class="row">
             <div class="col col-lg-12 text-center">
-                <h3 class="proyectos_subtitulo">Estos son los proyectos que he realizado</h3>
+                <h3 class="proyectos_subtitulo" id="proyecto">Estos son los proyectos que he realizado</h3>
             </div>
         </div>
 
@@ -55,8 +55,8 @@
                         <img src="{{ proyecto.imagen.url }}" class="card-img-top" alt="MoonFashion">
                         <div class="card-body">
 
-                          <h5 class="card-title text-center skills">MoonFashion</h5>
-                          <p class="card-text text-center">Página de venta de ropa americana</p>
+                          <h5 class="card-title text-center skills">{{proyecto.nombre}}</h5>
+                          <p class="card-text text-center">{{proyecto.descripcion}}</p>
 
                           <div class="d-flex justify-content-between flex-align-center">
                             <div class="iconos_proyecto">
@@ -71,7 +71,7 @@
                             </div>
     
                             <div>
-                                <a href="#" class="btn button_proyecto">Ver</a>
+                                <a href="{% url 'detail_project' proyecto.id %}" class="btn button_proyecto">Detalle</a>
                             </div>
                           </div>
 

@@ -197,5 +197,12 @@ li{
 }
 
 
+/*  CONTACT FORMULARIO  */
+.card_formulario{
+    background-color: var(--fondo2);
+}
 
-
+.campo_input{
+    max-width: 600px;
+    margin-bottom: 10px;
+}

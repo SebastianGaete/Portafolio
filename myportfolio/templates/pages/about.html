@@ -1,7 +1,59 @@
 {% extends 'layouts/layout.html' %}
+{% load static %}
 
 {% block content %}
 
-<h1>ACERCA DE MÍ</h1>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <h2 class="mb-4 sub_about">Un placer!</h2>
+            <div class="card card-body card_about">
+                <p>Me llamo Sebastián Gaete Fuentes, soy un joven de 23 años nacido y criado en Chile, país de los paisajes más hermosos del planeta tierra. Comencé a indagar en el mundo de la programación no hace más de un año, especificamente desde el mes de marzo del 2023. Desde entonces me ha encantado y desde los últimos meses me he esforzado en aprender y adquirir habilidades de forma autodidacta para desempeñarme como backend. Es por eso que tambien e decidido ingresar a un centro de formación profesional y actualmente me encuentro en primer año de la carrera de Ingeniería Informática con mención en Ciberseguridad en el Intituto Profesional Providencia, ubicado en mi país. 
+                <p class="ciberseguridad_sub">¿Porqué ciberseguridad?</p>
+                <p>Porque mi mayor anhelo es poder ser un profesional con el mayor conocimiento pasible del área. </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col col-lg-12">
+            <h1 class="mb-4 sub_skills">Tecnologías</h1>
+             <div class="contenedor_skills d-flex justify-content-around align-items-center flex-wrap mb-5">
+
+                <div class="card_skills" >
+                    <img src="{% static 'images/html5.jpg' %}" alt="html5">
+                    <p class="mt-4">html5</p>
+                 </div>
+
+                 <div class="card_skills" >
+                    <img src="{% static 'images/css3.jpg' %}" alt="css3">
+                    <p class="mt-4">css3</p>
+                 </div>
+
+                <div class="card_skills" >
+                    <img src="{% static 'images/piton.jpg' %}" alt="python">
+                    <p class="mt-4">Python</p>
+                 </div>
+
+                 <div class="card_skills">
+                    <img src="{% static 'images/django.jpg' %}" alt="django">
+                    <p class="mt-4">Django</p>
+                 </div>
+
+                 <div class="card_skills">
+                    <img src="{% static 'images/java.jpg' %}" alt="java">
+                    <p class="mt-4">Java</p>
+                 </div>
+                 
+                 <div class="card_skills" >
+                    <img src="{% static 'images/postgresql.jpg' %}" alt="postgresql">
+                    <p class="mt-4">Postgresql</p>
+                 </div>
+
+             </div>
+        </div>
+    </div>
+</div>
+
 
 {% endblock %}

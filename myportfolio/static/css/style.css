@@ -8,6 +8,8 @@
     --secundario2: #f4863e;
 }
 
+/* https://www.eliangermosen.com/about */
+
 /*   GLOBALS   */
 a{
     text-decoration: none;
@@ -27,25 +29,20 @@ li{
     background-color:  var(--secundario);
     color: var(--fondo)
 }
-
 .navbar{
     font-size: 20px;
 }
-
 .enlaces{
     color: var(--texto)
 }
-
 .enlaces:hover{
     color: var(--texto);
 }
-
 .button{
     color: var(--secundario);
     border-radius: 20px;
     padding: 5px 30px;
 }
-
 .button:hover{
     color: var(--secundario2);
     border-color: var(--secundario2)
@@ -129,17 +126,14 @@ li{
     color: var(--texto);
     padding: 5px;
 }
-
 .iconos_proyecto a i{
     font-size: 25px;
 }
-
 .button_proyecto{
     background-color: var(--secundario);
     color: var(--texto);
     width: 90px;
 }
-
 .button_proyecto:hover{
     background-color: var(--secundario2);
 }
@@ -173,10 +167,34 @@ li{
 }
 
 
-
-
-
-
+/*  ABOUT  */
+.card_about{
+    background-color: var(--fondo2);
+    line-height: 30px;
+}
+.ciberseguridad_sub{
+    color: var(--secundario2);
+}
+.card_skills{
+    width: 100px;
+    width: 130px;
+    text-align: center;
+}
+.card_skills img{
+    width: 100px;
+}
+@media (max-width: 430px ) {
+    .contenedor_skills{
+        flex-direction: column;
+        gap: 17px;
+    }
+    .sub_skills{
+        text-align: center;
+    }
+    .sub_about{
+        text-align: center;
+    }
+}
 
 
 

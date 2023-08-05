@@ -1,0 +1,16 @@
+
+<div class="row mt-4">
+    <h1 class="mb-4">Certificados educacionales</h1>
+    {% for certificado in certificados %}
+        <div class="col col-lg-6 py-2 d-flex justify-content-center">
+            <div class="card bg_card" style="width: 380px;">
+                <img src="{{ certificado.imagen.url }}" class="card-img-top" alt="MoonFashion">
+                <div class="card-body">
+                    <h5 class="card-title text-center skills">{{certificado.nombre_certificado}}</h5>
+                    <p class="card-text text-center">Obtenido el {{certificado.fecha_obtencion|date:"d-m-Y"}}</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+

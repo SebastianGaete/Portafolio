@@ -23,6 +23,15 @@ class Contacto(models.Model):
         return self.nombre + " " + self.apellidos
 
 
+class Certificado(models.Model):
+    nombre_certificado = models.CharField(max_length=100)
+    imagen = models.ImageField(upload_to='certificados')
+    fecha_obtencion = models.DateTimeField(verbose_name='Fecha de obtención')
+
+    def __str__(self):
+        return self.nombre_certificado
+
+
 class Comentario(models.Model):
     usuario = models.CharField(max_length=120, default='Anónimo')
     contenido = models.TextField()

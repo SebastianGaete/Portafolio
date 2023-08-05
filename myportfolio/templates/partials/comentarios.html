@@ -12,7 +12,7 @@
                 <div class="modal-content">
 
                     <div class="modal-body bg-dark">
-                        <form action="{% url 'comentario' %}" method="POST" class="card card-body card_formulario">
+                        <form action="{% url 'comentarios' %}" method="POST" class="card card-body card_formulario">
                             {% csrf_token %}
                             <p>Los campos que contengan un <span class="skills">*</span> son obligatorios.</p>
                             

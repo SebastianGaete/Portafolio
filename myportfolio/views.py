@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Proyecto, Contacto, Comentario
+from .models import Proyecto, Contacto, Comentario, Certificado
 # Create your views here.
 
 def home(request):
@@ -8,10 +8,11 @@ def home(request):
 
 
 def about(request):
+    certificados = Certificado.objects.all()
     comentarios = Comentario.objects.all()
     ninguno = 'Se la primera persona en comentar!'
     if comentarios:
-        return render(request, 'pages/about.html', {'comentarios':comentarios})
+        return render(request, 'pages/about.html', {'comentarios':comentarios, 'certificados':certificados})
     else:
         return render(request, 'pages/about.html', {'comentarios':comentarios, 'ninguno':ninguno})
 
@@ -51,3 +52,7 @@ def comentarios(request):
         return redirect('about')
     else:
         return render(request, 'pages/about.html')
+    
+
+def certificados(request):
+    return render(request, 'pages/about.html')

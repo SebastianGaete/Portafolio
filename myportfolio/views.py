@@ -6,16 +6,17 @@ def home(request):
     proyectos = Proyecto.objects.all()
     return render(request, 'index.html', {'proyectos':proyectos})
 
-def about(request):
-    return render(request, 'pages/about.html')
 
-def detail_project(request, id):
-    detalle = Proyecto.objects.get(id=id)
-    return render(request, 'pages/detail_project.html', {'detalle':detalle})
+def about(request):
+    comentarios = Comentario.objects.all()
+    ninguno = 'Se la primera persona en comentar!'
+    if comentarios:
+        return render(request, 'pages/about.html', {'comentarios':comentarios})
+    else:
+        return render(request, 'pages/about.html', {'comentarios':comentarios, 'ninguno':ninguno})
 
 
 def contact(request):
-    comentarios = Comentario.objects.all()
     if request.method == 'POST':
         try:
             nombre = request.POST['nombre']
@@ -37,7 +38,7 @@ def contact(request):
             return render(request, 'pages/contact.html', {'error':error})
 
     else:
-        return render(request, 'pages/contact.html', {'comentarios':comentarios})
+        return render(request, 'pages/contact.html')
     
 
 def comentarios(request):

@@ -1,41 +1,57 @@
 
 
 
-<div class="row">
-  <div class="col">
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Deja tu comentario</button>
+<div class="row mt-5">
+    <h1 class="mb-2">Comentarios</h1>
+    <div class="col">
+        <button type="button" class="button_contact" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Click para comentar <i class="bi bi-chat-left-text"></i>
+        </button>
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
 
-          <div class="modal-body bg-dark">
-            <form action="{% url 'comentario' %}" method="POST" class="card card-body card_formulario">
-                <p>Los campos que contengan un <span class="skills">*</span> son obligatorios.</p>
-                {% csrf_token %}
-                <div>
-                    <label for="usuario" class="col-form-label"></label>
-                    <input type="usuario" class="form-control shadow-none border-0" name="usuario" id="usuario" placeholder="Nombre*" required>
+                    <div class="modal-body bg-dark">
+                        <form action="{% url 'comentario' %}" method="POST" class="card card-body card_formulario">
+                            {% csrf_token %}
+                            <p>Los campos que contengan un <span class="skills">*</span> son obligatorios.</p>
+                            
+                            <label for="usuario" class="col-form-label"></label>
+                            <input type="usuario" class="form-control shadow-none border-0" name="usuario" id="usuario" placeholder="Nombre*" required>
+                            
+                            <label for="contenido" class="col-form-label"></label>
+                            <textarea class="form-control shadow-none border-0" name="contenido" id="contenido" rows="4" placeholder="Comentario*" required></textarea>
+                
+                            <div class="modal-body mt-2 card_formulario d-flex justify-content-between">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                                <button class="button_contact">Publicar Comentario <i class="bi bi-check2-circle"></i></button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div>
-                    <label for="contenido" class="col-form-label"></label>
-                    <textarea class="form-control shadow-none border-0" name="contenido" id="contenido" rows="4" placeholder="Comentario*" required></textarea>
-                </div>
-
-                <div class="modal-body mt-2 card_formulario d-flex justify-content-between">
-                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                  <button class="button_contact">Publicar Comentario</button>
-                </div>
-            </form>
-          </div>
-
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
 
-  <div class="col">
-    <h1>Todos los comentarios</h1>
-  </div>
+<div class="row mt-5">
+    
+    {% for comentario in comentarios %}
+    <div class="col col-lg-6 col-12">
+        <div class="card card-body mb-4 card_formulario">
+            <div class="d-flex justify-content-between align-items-center">
+                <h5>@~{{comentario.usuario}}</h5>
+                <p>{{comentario.fecha_comentario|date:"d-m-Y"}}</p>
+            </div>
+            
+            <div class="card-body bg_comentarios">
+                <p class="card-text">{{comentario.contenido}}</p>
+            </div>  
+        </div>
+    </div>
+    {% endfor %}
 
+    <div class="col">
+        <h3>{{ninguno}}</h3>
+    </div>
 </div>

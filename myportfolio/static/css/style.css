@@ -3,6 +3,7 @@
     --cuerpos: 'Oswald', sans-serif;
     --fondo: #222831;
     --fondo2: #323a47;
+    --fondo3: #4c5665;
     --texto: #FFF9F5;
     --secundario: #FD7014;
     --secundario2: #f4863e;
@@ -209,4 +210,8 @@ li{
     .carrusel{
         visibility: collapse;
     }
+}
+.bg_comentarios{
+    background-color: var(--fondo3);
+    border-radius: 10px;
 }

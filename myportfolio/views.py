@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Proyecto, Contacto
+from .models import Proyecto, Contacto, Comentario
 # Create your views here.
 
 def home(request):
@@ -15,6 +15,7 @@ def detail_project(request, id):
 
 
 def contact(request):
+    comentarios = Comentario.objects.all()
     if request.method == 'POST':
         try:
             nombre = request.POST['nombre']
@@ -36,9 +37,16 @@ def contact(request):
             return render(request, 'pages/contact.html', {'error':error})
 
     else:
-        return render(request, 'pages/contact.html')
+        return render(request, 'pages/contact.html', {'comentarios':comentarios})
     
 
-def comentario(request):
-    
-    return render(request, 'pages/contact.html')
+def comentarios(request):
+    if request.method == 'POST':
+        usuario = request.POST['usuario']
+        contenido = request.POST['contenido']
+        comentario = Comentario.objects.create(usuario=usuario, contenido=contenido)
+        comentario.save()
+        print(comentario)
+        return redirect('about')
+    else:
+        return render(request, 'pages/about.html')

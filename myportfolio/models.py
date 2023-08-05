@@ -24,7 +24,7 @@ class Contacto(models.Model):
 
 
 class Comentario(models.Model):
-    usuario = models.CharField(max_length=100, blank=True, default='Anónimo')
+    usuario = models.CharField(max_length=120, default='Anónimo')
     contenido = models.TextField()
     fecha_comentario = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de comentario')
 

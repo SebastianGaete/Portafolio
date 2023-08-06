@@ -133,7 +133,7 @@ li{
 .button_proyecto{
     background-color: var(--secundario);
     color: var(--texto);
-    width: 100px;
+    width: 120px;
 }
 .button_proyecto:hover{
     background-color: var(--secundario2);

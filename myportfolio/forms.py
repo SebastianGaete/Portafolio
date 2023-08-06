@@ -8,10 +8,10 @@ class Crear_contacto(forms.ModelForm):
         fields = ['nombre', 'apellidos', 'email', 'mensaje']
 
         widgets = {
-            'nombre':forms.TextInput(attrs={'class':'form-control campo_input opacity-50 shadow-none border-0', 'placeholder':'Nombre*', 'label':''}),
-            'apellidos':forms.TextInput(attrs={'class':'form-control campo_input opacity-50 shadow-none border-0', 'placeholder':'Apellidos*', 'label':''}),
-            'email':forms.EmailInput(attrs={'class':'form-control campo_input opacity-50 shadow-none border-0', 'placeholder':'Email*', 'label':''}),
-            'mensaje':forms.Textarea(attrs={'class':'form-control campo_input opacity-50 shadow-none border-0', 'rows':4, 'placeholder':'Deja tu mensaje*', 'label':''}),
+            'nombre':forms.TextInput(attrs={'class':'form-control campo_input opacity-50 shadow-none border-0', 'placeholder':'Nombre*'}),
+            'apellidos':forms.TextInput(attrs={'class':'form-control campo_input opacity-50 shadow-none border-0', 'placeholder':'Apellidos*'}),
+            'email':forms.EmailInput(attrs={'class':'form-control campo_input opacity-50 shadow-none border-0', 'placeholder':'Email*'}),
+            'mensaje':forms.Textarea(attrs={'class':'form-control campo_input opacity-50 shadow-none border-0', 'rows':4, 'placeholder':'Deja tu mensaje*'}),
         }
 
     def __init__(self, *args, **kwargs):

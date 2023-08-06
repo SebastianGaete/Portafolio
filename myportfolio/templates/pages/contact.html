@@ -12,17 +12,7 @@
                     <p class="mb-4">Todos los campos que contengan un <span class="skills">*</span> son obligatorios</p>
                     {% csrf_token %}
 
-                    <label for="nombre"></label>
-                    <input class="form-control campo_input opacity-50 shadow-none border-0" type="text" name="nombre" id="nombre" placeholder="Nombre*">
-    
-                    <label for="apellidos"></label>
-                    <input class="form-control campo_input opacity-50 shadow-none border-0" type="text" name="apellidos" id="apellidos" placeholder="Apellidos*">
-    
-                    <label for="email"></label>
-                    <input class="form-control campo_input opacity-50 shadow-none border-0" type="email" name="email" id="email" placeholder="Email*">
-    
-                    <label for="mensaje"></label>
-                    <textarea class="form-control campo_input opacity-50 shadow-none border-0" name="mensaje" id="mensaje" rows="4" placeholder="Deja tu mensaje*"></textarea>
+                    {{ formulario_contacto }}
                     
                     <button class="btn btn-secondary campo_input button_contact">Enviar</button>
     

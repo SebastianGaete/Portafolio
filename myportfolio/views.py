@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
-from .models import Proyecto, Contacto, Comentario, Certificado
+from .models import Proyecto, Comentario, Certificado
+
+from .forms import Crear_contacto, Crear_comentario
 # Create your views here.
 
 def home(request):
@@ -12,43 +14,38 @@ def about(request):
     comentarios = Comentario.objects.all()
     ninguno = 'Se la primera persona en comentar!'
     if comentarios:
-        return render(request, 'pages/about.html', {'comentarios':comentarios, 'certificados':certificados})
+        return render(request, 'pages/about.html', {'comentarios':comentarios, 'certificados':certificados, 'formulario_comentario':Crear_comentario})
     else:
-        return render(request, 'pages/about.html', {'comentarios':comentarios, 'ninguno':ninguno})
+        return render(request, 'pages/about.html', {'comentarios':comentarios, 'ninguno':ninguno, 'formulario_comentario':Crear_comentario})
+
 
 
 def contact(request):
     if request.method == 'POST':
         try:
-            nombre = request.POST['nombre']
-            apellidos = request.POST['apellidos']
-            email = request.POST['email']
-            mensaje = request.POST['mensaje']
-            campos = nombre, apellidos, email, mensaje
+            formulario = Crear_contacto(request.POST)
+            contacto = formulario.save(commit=False)
+            campos = contacto.nombre, contacto.apellidos, contacto.email, contacto.mensaje
+            
             for i in campos:
-                if i == '':
+                if campos[i] == '' :
                     raise Exception
                 else:
-                    contacto = Contacto.objects.create(nombre=nombre, apellidos=apellidos, email=email, mensaje=mensaje)
                     contacto.save()
                     mensaje_retorno = 'Formulario enviado con exito!'
-                    return render(request, 'pages/contact.html', {'mensaje':mensaje_retorno})
+                    return render(request, 'pages/contact.html', {'mensaje':mensaje_retorno, 'formulario_contacto': Crear_contacto})
             
         except Exception:
             error = 'Hubo un error al enviar al formulario!'
-            return render(request, 'pages/contact.html', {'error':error})
-
+            return render(request, 'pages/contact.html', {'error':error, 'formulario_contacto': Crear_contacto})
     else:
-        return render(request, 'pages/contact.html')
+        return render(request, 'pages/contact.html', {'formulario_contacto': Crear_contacto})
     
 
 def comentarios(request):
     if request.method == 'POST':
-        usuario = request.POST['usuario']
-        contenido = request.POST['contenido']
-        comentario = Comentario.objects.create(usuario=usuario, contenido=contenido)
-        comentario.save()
-        print(comentario)
+        formulario = Crear_comentario(request.POST)
+        formulario.save()
         return redirect('about')
     else:
         return render(request, 'pages/about.html')

@@ -11,6 +11,14 @@ class Proyecto(models.Model):
     def __str__(self):
         return self.nombre
     
+class Certificado(models.Model):
+    nombre_certificado = models.CharField(max_length=100)
+    imagen = models.ImageField(upload_to='certificados')
+    fecha_obtencion = models.DateTimeField(verbose_name='Fecha de obtención')
+
+    def __str__(self):
+        return self.nombre_certificado
+
 
 class Contacto(models.Model):
     nombre = models.CharField(max_length=200)
@@ -23,17 +31,8 @@ class Contacto(models.Model):
         return self.nombre + " " + self.apellidos
 
 
-class Certificado(models.Model):
-    nombre_certificado = models.CharField(max_length=100)
-    imagen = models.ImageField(upload_to='certificados')
-    fecha_obtencion = models.DateTimeField(verbose_name='Fecha de obtención')
-
-    def __str__(self):
-        return self.nombre_certificado
-
-
 class Comentario(models.Model):
-    usuario = models.CharField(max_length=120, default='Anónimo')
+    usuario = models.CharField(max_length=120)
     contenido = models.TextField()
     fecha_comentario = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de comentario')
 

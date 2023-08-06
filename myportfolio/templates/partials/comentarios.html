@@ -1,6 +1,5 @@
 
 
-
 <div class="row mt-5">
     <h1 class="mb-2">Comentarios</h1>
     <div class="col">
@@ -16,11 +15,7 @@
                             {% csrf_token %}
                             <p>Los campos que contengan un <span class="skills">*</span> son obligatorios.</p>
                             
-                            <label for="usuario" class="col-form-label"></label>
-                            <input type="usuario" class="form-control shadow-none border-0" name="usuario" id="usuario" placeholder="Nombre*" required>
-                            
-                            <label for="contenido" class="col-form-label"></label>
-                            <textarea class="form-control shadow-none border-0" name="contenido" id="contenido" rows="4" placeholder="Comentario*" required></textarea>
+                            {{ formulario_comentario }}
                 
                             <div class="modal-body mt-2 card_formulario d-flex justify-content-between">
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>

@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myportfolio'
+    'myportfolio',
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 CSRF_TRUSTED_ORIGINS = ['https://portafolio-production-16f3.up.railway.app']
@@ -131,6 +133,15 @@ STATIC_ROOT = (os.path.join(BASE_DIR, 'staticfiles/'))
 
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
+
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME':'Zebledd',
+    'API_KEY':'526468264271715',
+    'API_SECRET':'1BZD4Kfbs8PuFgzasZAGvwOipIs',
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

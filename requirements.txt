@@ -1,10 +1,14 @@
 asgiref==3.7.2
+certifi==2023.7.22
+cloudinary==1.33.0
 Django==4.0
 django-static-fontawesome==6.4.0.0
 gunicorn==21.2.0
 packaging==23.1
 Pillow==10.0.0
 psycopg2==2.9.7
+six==1.16.0
 sqlparse==0.4.4
 tzdata==2023.3
+urllib3==1.26.16
 whitenoise==6.5.0

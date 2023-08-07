@@ -10,7 +10,7 @@ def home(request):
 
 
 def about(request):
-    certificados = Certificado.objects.all().order_by('-fecha_obtencion')
+    certificados = Certificado.objects.all().order_by('-id')
     comentarios = Comentario.objects.all().order_by('-fecha_comentario')
     ninguno = 'Se la primera persona en comentar!'
     if comentarios:

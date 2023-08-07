@@ -10,13 +10,22 @@ def home(request):
 
 
 def about(request):
-    certificados = Certificado.objects.all()
-    comentarios = Comentario.objects.all()
+    certificados = Certificado.objects.all().order_by('-fecha_obtencion')
+    comentarios = Comentario.objects.all().order_by('-fecha_comentario')
     ninguno = 'Se la primera persona en comentar!'
     if comentarios:
-        return render(request, 'pages/about.html', {'comentarios':comentarios, 'certificados':certificados, 'formulario_comentario':Crear_comentario})
+        return render(request, 'pages/about.html', {
+            'comentarios':comentarios, 
+            'certificados':certificados, 
+            'formulario_comentario':Crear_comentario
+            })
     else:
-        return render(request, 'pages/about.html', {'comentarios':comentarios, 'ninguno':ninguno, 'formulario_comentario':Crear_comentario})
+        return render(request, 'pages/about.html', {
+            'comentarios':comentarios, 
+            'ninguno':ninguno, 
+            'certificados':certificados, 
+            'formulario_comentario':Crear_comentario
+            })
 
 
 

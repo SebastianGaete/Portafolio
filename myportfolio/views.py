@@ -28,7 +28,7 @@ def contact(request):
             campos = contacto.nombre, contacto.apellidos, contacto.email, contacto.mensaje
             
             for i in campos:
-                if campos[i] == '' :
+                if campos[0] == '' or campos[1] == '' or campos[2] == '' or campos[3] == '':
                     raise Exception
                 else:
                     contacto.save()

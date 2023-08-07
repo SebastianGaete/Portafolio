@@ -137,7 +137,7 @@ MEDIA_URL = '/media/'
 
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME':'Zebledd',
+    'CLOUD_NAME':'dfv6uwrtn',
     'API_KEY':'526468264271715',
     'API_SECRET':'1BZD4Kfbs8PuFgzasZAGvwOipIs',
 }

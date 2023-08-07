@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'cloudinary',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://portafolio-production-16f3.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://sebastiangaete.up.railway.app']
 
 MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',

@@ -5,7 +5,8 @@ from django.db import models
 class Proyecto(models.Model):
     nombre = models.CharField(max_length=100)
     imagen = models.ImageField(upload_to='proyectos')
-    link = models.URLField(blank=True)
+    link_repositorio = models.URLField(blank=True)
+    link_web = models.URLField(blank=True)
     descripcion = models.TextField()
 
     def __str__(self):

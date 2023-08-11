@@ -136,6 +136,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
 
 
+# Sttings Cloudinary
+
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME':'dfv6uwrtn',
     'API_KEY':'526468264271715',

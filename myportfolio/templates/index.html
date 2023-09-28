@@ -40,39 +40,36 @@
 <section>
     <div class="container mt-5">
         <div class="row">
-            <div class="col col-lg-12 text-center">
+            <div class="col-lg-12 text-center">
                 <h3 class="proyectos_subtitulo" id="proyecto">Estos son los proyectos que he realizado</h3>
             </div>
         </div>
 
         <div class="row mt-3">
-            <div class="col col-lg-12 col-md-12 col-12 contenedor_proyectos">
-                {% for proyecto in proyectos %}
-                    <div class="card bg_card" style="width: 400px;"> 
+            {% for proyecto in proyectos %}
+                <div class="col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+                    <div class="card bg_card"> 
                         <img src="{{ proyecto.imagen.url }}" class="card-img-top" alt="{{ proyecto.nombre }}">
                         <div class="card-body">
-
-                          <h5 class="card-title text-center skills">{{proyecto.nombre}}</h5>
-                          <p class="card-text text-center">{{proyecto.descripcion}}</p>
-
+                            <h5 class="card-title text-center skills">{{proyecto.nombre}}</h5>
+                            <p class="card-text text-center">{{proyecto.descripcion}}</p>
                             <div class="d-flex justify-content-between flex-align-center">
                                 <div class="iconos_proyecto">
                                     <!-- Repositorio Github -->
-                                    <a href="{{proyecto.link_repositorio}}" target="_blank" class="px-3 text-light">
-                                        <i class="bi bi-github"></i>
-                                    </a>
+                                    <a href="{{proyecto.link_repositorio}}" target="_blank" class="px-3 text-light"><i class="bi bi-github"></i></a>
                                 </div>
-                                    <!-- Link Web -->
+                                <!-- Link Web -->
                                 <div>
                                     <a href="{{proyecto.link_web}}"  target="_blank" class="btn button_proyecto">Visitar web <i class="bi bi-globe"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                {% endfor %}
-            </div>
+                </div>
+            {% endfor %}
         </div>
     </div>
 </section>
+
 
 {% endblock %}

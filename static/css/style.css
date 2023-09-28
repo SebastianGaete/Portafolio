@@ -136,13 +136,6 @@ li{
 .button_proyecto:hover{
     background-color: var(--secundario2);
 }
-.contenedor_proyectos{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
 
 
 

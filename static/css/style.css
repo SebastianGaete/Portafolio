@@ -113,9 +113,7 @@ li{
 
 
 /*   PROYECTOS   */
-.contenedor_proyectos{
-    margin-top: 70px 
-}
+
 .proyectos_subtitulo{
     margin: 0 auto;
     max-width: 500px;
@@ -137,6 +135,12 @@ li{
 }
 .button_proyecto:hover{
     background-color: var(--secundario2);
+}
+.contenedor_proyectos{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
 }
 
 
